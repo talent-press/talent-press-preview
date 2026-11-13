@@ -1,0 +1,81 @@
+  .quiz-dialog { border: 0; padding: 0; background: #fff; border-radius: 28px; box-shadow: 0 24px 64px rgba(40, 22, 9, .24); width: min(960px, calc(100% - 32px)); max-width: none; max-height: none; overflow: visible; }
+  .quiz-dialog::backdrop { background: rgba(40, 22, 9, .65); backdrop-filter: blur(5px); }
+  .quiz-dialog .qclose { position: absolute; top: 10px; right: 12px; z-index: 3; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; font-size: 28px; line-height: 1; background: var(--pale); border: 0; cursor: pointer; color: var(--brown); }
+  /* Всплывающий квиз */
+  .quiz.qc-side {
+    display: grid;
+    grid-template-columns: minmax(0, 245px) minmax(0, 1fr);
+    grid-template-areas: "help question";
+    padding: 0;
+    margin: 0;
+    max-width: none;
+    max-height: calc(100svh - 32px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-radius: 28px;
+    background: #fff;
+  }
+  .qc-side .q-side {
+    grid-area: help;
+    min-width: 0;
+    background: var(--pale);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .qc-side .q-img {
+    flex: none;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+    border-radius: 16px;
+  }
+  .qc-side .q-why { background: #fff; border-radius: 16px; padding: 14px; }
+  .qc-side .q-why b { font: 600 11px var(--mono); color: var(--teal); }
+  .qc-side .q-why p { margin: 6px 0 0; font-size: 14px; line-height: 1.45; }
+  .qc-side .q-main {
+    grid-area: question;
+    min-width: 0;
+    min-height: 0;
+    padding: clamp(22px, 3vw, 36px);
+  }
+  .qc-side .q-top { padding-right: 48px; margin-bottom: 18px; }
+  .qc-side .step.active { animation-name: quiz-step-in; }
+  @keyframes quiz-step-in { from { opacity: 0; } to { opacity: 1; } }
+  .qc-side .q-steps h3 {
+    font-size: clamp(24px, 2.35vw, 34px);
+    line-height: 1.18;
+    margin: 0 0 16px;
+    text-transform: none;
+    overflow-wrap: anywhere;
+  }
+  .qc-side .opts { grid-template-columns: minmax(0, 1fr); margin-top: 0; }
+  .qc-side .opts.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .qc-side .opt {
+    min-height: 48px;
+    padding: 11px 15px;
+    border-radius: 16px;
+    overflow-wrap: anywhere;
+  }
+  .qc-side .opt i { width: 18px; height: 18px; }
+  .qc-side .q-in { margin-top: 0; }
+  .qc-side .q-back { margin-top: 12px; padding-top: 6px; }
+  .qc-side.is-first .q-back, .qc-side.is-done .q-back { display: none; }
+  .qc-side.is-done .q-side { display: none; }
+  .quiz.qc-side.is-done { grid-template-columns: minmax(0, 1fr); grid-template-areas: "question"; }
+  .qc-side .q-paused { margin: 0 0 12px; font-size: 14px; color: var(--muted); }
+  .qc-side .q-send:disabled { cursor: default; transform: none; box-shadow: none; }
+  @media (max-width: 760px) {
+    .quiz-dialog { width: calc(100% - 20px); }
+    .quiz.qc-side { grid-template-columns: minmax(0, 1fr); grid-template-areas: "question" "help"; border-radius: 20px; max-height: calc(100svh - 20px); }
+    .qc-side .q-main { padding: 20px 16px 16px; }
+    .qc-side .q-top { padding-right: 42px; margin-bottom: 14px; }
+    .qc-side .q-steps h3 { font-size: clamp(22px, 5vw, 27px); }
+    .qc-side .opts.two { grid-template-columns: minmax(0, 1fr); }
+    .qc-side .q-side { padding: 0 16px 16px; background: #fff; }
+    .qc-side .q-img { display: none; }
+    .qc-side .q-why { background: var(--pale); }
+    .qc-side .opt { font-size: 16px; }
+    .quiz-dialog .qclose { top: 8px; right: 8px; }
+  }
