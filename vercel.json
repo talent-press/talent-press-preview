@@ -1,0 +1,126 @@
+{
+  "headers": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "talent-press-staging.vercel.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/pr",
+      "destination": "/services/usa",
+      "statusCode": 301
+    },
+    {
+      "source": "/pr/",
+      "destination": "/services/usa",
+      "statusCode": 301
+    },
+    {
+      "source": "/pr-europe",
+      "destination": "/services/visa-case",
+      "statusCode": 301
+    },
+    {
+      "source": "/pr-europe/",
+      "destination": "/services/visa-case",
+      "statusCode": 301
+    },
+    {
+      "source": "/visa-eb-1a",
+      "destination": "/visas/eb-1a",
+      "statusCode": 301
+    },
+    {
+      "source": "/visa-eb-1a/",
+      "destination": "/visas/eb-1a",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases-visa-eb-1a",
+      "destination": "/services/usa",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases-visa-eb-1a/",
+      "destination": "/services/usa",
+      "statusCode": 301
+    },
+    {
+      "source": "/britain",
+      "destination": "/services/uk",
+      "statusCode": 301
+    },
+    {
+      "source": "/britain/",
+      "destination": "/services/uk",
+      "statusCode": 301
+    },
+    {
+      "source": "/britain2",
+      "destination": "/services/uk",
+      "statusCode": 301
+    },
+    {
+      "source": "/britain2/",
+      "destination": "/services/uk",
+      "statusCode": 301
+    },
+    {
+      "source": "/thanks",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/thanks/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/thanks-en",
+      "destination": "/en",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/thanks-en/",
+      "destination": "/en",
+      "statusCode": 301
+    },
+    {
+      "source": "/criteria_smi",
+      "destination": "/blog/criterion-published-material",
+      "statusCode": 301
+    },
+    {
+      "source": "/criteria_smi/",
+      "destination": "/blog/criterion-published-material",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/kakdoc",
+      "destination": "/blog/how-to-document-achievements",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/kakdoc/",
+      "destination": "/blog/how-to-document-achievements",
+      "statusCode": 301
+    },
+    {
+      "source": "/page134218506.html",
+      "destination": "/",
+      "statusCode": 301
+    }
+  ]
+}
