@@ -1,7 +1,22 @@
 {
   "headers": [
     {
-      "source": "/:path*",
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "talent-press-staging.vercel.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/:path+",
       "has": [
         {
           "type": "host",
